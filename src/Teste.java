@@ -18,10 +18,12 @@ public class Teste {
 		contaDaMarcela.deposita(100.0);
 		contaDaMarcela.saca(20);
 		contaDaMarcela.transfere(20, contaDoPaulo);
-
+		
+		System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 		System.out.println("Titular: " + contaDaMarcela.titular.nome + ", Saldo: "
 				+ contaDaMarcela.saldo);
 		
+		System.out.println("-------------------------------");
 		System.out.println("Titular: " + contaDoPaulo.titular.nome + ", Saldo: "
 				+ contaDoPaulo.saldo);
 	}
