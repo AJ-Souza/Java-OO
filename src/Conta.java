@@ -2,6 +2,19 @@ public class Conta {
 	private double saldo;
 	private int agencia;
 	private int numero;
+	private static int total = 0;
+	
+	public Conta(int agencia, int numero) {
+		total ++;
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("Nova Conta criada");
+	}
+	
+	public static int getTotal() {
+		return total;
+	}
+
 	public Cliente getTitular() {
 		return titular;
 	}
@@ -35,7 +48,7 @@ public class Conta {
 	public void deposita(double valor) {
 		this.saldo += valor;
 	}
-	
+
 	public void saca(double valor) {
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
@@ -44,7 +57,7 @@ public class Conta {
 			System.out.println("Saldo Insuficiente");
 		}
 	}
-	
+
 	public void transfere(double valor, Conta destino) {
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
