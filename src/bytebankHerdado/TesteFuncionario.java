@@ -6,9 +6,6 @@ public class TesteFuncionario {
 		f1.setNome("Nico Steppat");
 		f1.setCpf("224.454.758-36");
 		f1.setSalario(2600.0);
-	
-		System.out.println(f1.getNome());
-		System.out.println(f1.getBonus());
 
 		Gerente g1 = new Gerente();
 		g1.setNome("Marcos Ramos de Oliveira");
@@ -17,7 +14,31 @@ public class TesteFuncionario {
 		g1.setSenha(456);
 		boolean autenticou = g1.autentica(456);
 		System.out.println(autenticou);
-		System.out.println(g1.getNome());
-		System.out.println(g1.getBonus());
+
+		EditorVideo ev1 = new EditorVideo();
+		ev1.setNome("Pedro Paulo");
+		ev1.setSalario(2500.0);
+
+		Designer d1 = new Designer();
+		d1.setNome("Henrique Medeiros");
+		d1.setSalario(2000.0);
+
+		System.out.println("-------------------------");
+
+		System.out.println(f1.getNome() + " - " + f1.getBonificacao());
+		System.out.println(g1.getNome() + " - " + g1.getBonificacao());
+		System.out.println(ev1.getNome() + " - " + ev1.getBonificacao());
+		System.out.println(d1.getNome() + " - " + d1.getBonificacao());
+
+		ControleBonificacao controle = new ControleBonificacao();
+
+		controle.registra(f1);
+		controle.registra(g1);
+		controle.registra(ev1);
+		controle.registra(d1);
+
+		System.out.println("-------------------------");
+		System.out.println("Total de Bonificacoes: R$" + controle.getSoma());
+
 	}
 }
