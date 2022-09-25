@@ -11,7 +11,7 @@ public class TesteFuncionario {
 		System.out.println(f1.getBonus());
 
 		Gerente g1 = new Gerente();
-		g1.setNome("Marcos Ramos");
+		g1.setNome("Marcos Ramos de Oliveira");
 		g1.setCpf("321.456.978-90");
 		g1.setSalario(5000.0);
 		g1.setSenha(456);
