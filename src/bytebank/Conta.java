@@ -1,3 +1,4 @@
+package bytebank;
 public class Conta {
 	private double saldo;
 	private int agencia;
