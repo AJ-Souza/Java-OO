@@ -1,6 +1,6 @@
 package bytebank;
-public class Conta {
-	private double saldo;
+public abstract class Conta {
+	protected double saldo;
 	private int agencia;
 	private int numero;
 	private static int total = 0;
@@ -46,9 +46,7 @@ public class Conta {
 		return saldo;
 	}
 
-	public void deposita(double valor) {
-		this.saldo += valor;
-	}
+	public abstract void deposita(double valor);
 
 	public void saca(double valor) {
 		if (this.saldo >= valor) {

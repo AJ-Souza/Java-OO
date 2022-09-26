@@ -2,7 +2,7 @@ package bytebankHerdado;
 
 public class TesteFuncionario {
 	public static void main(String[] args) {
-		Funcionario f1 = new Funcionario();
+		Funcionario f1 = new Gerente();
 		f1.setNome("Nico Steppat");
 		f1.setCpf("224.454.758-36");
 		f1.setSalario(2600.0);

@@ -1,8 +1,8 @@
 package bytebank;
 public class Teste {
 	public static void main(String[] args) {
-		Conta contaDaMarcela = new Conta(456, 963369);
-		Conta contaDoPaulo = new Conta(123, 789987);
+		Conta contaDaMarcela = new ContaCorrente(456, 963369);
+		Conta contaDoPaulo = new ContaPoupanca(123, 789987);
 		
 		contaDoPaulo.titular = new Cliente();
 
