@@ -5,10 +5,10 @@ public class Conta {
 	private int numero;
 	private static int total = 0;
 	
-	public Conta(int agencia, int numero) {
+	public Conta(int agencia, int numeroDaConta) {
 		total ++;
 		this.agencia = agencia;
-		this.numero = numero;
+		this.numero = numeroDaConta;
 		System.out.println("Nova Conta criada");
 	}
 	
