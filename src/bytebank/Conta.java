@@ -1,17 +1,18 @@
 package bytebank;
+
 public abstract class Conta {
 	protected double saldo;
 	private int agencia;
 	private int numero;
 	private static int total = 0;
-	
+
 	public Conta(int agencia, int numeroDaConta) {
-		total ++;
+		total++;
 		this.agencia = agencia;
 		this.numero = numeroDaConta;
 		System.out.println("Nova Conta criada");
 	}
-	
+
 	public static int getTotal() {
 		return total;
 	}
@@ -48,22 +49,15 @@ public abstract class Conta {
 
 	public abstract void deposita(double valor);
 
-	public void saca(double valor) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			System.out.println("Saque realizado com Sucesso");
-		} else {
-			System.out.println("Saldo Insuficiente");
+	public void saca(double valor) throws SaldoInsuficienteException {
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException("Saldo Atual: " + this.saldo + ", Valor a Ser Sacado: " + valor);
 		}
+		this.saldo -= valor;
 	}
 
-	public void transfere(double valor, Conta destino) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			destino.saldo += valor;
-			System.out.println("Transferencia realizada com sucesso");
-		} else {
-			System.out.println("Saldo Insuficiente");
-		}
+	public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
+		this.saca(valor);
+		destino.deposita(valor);
 	}
 }

@@ -2,7 +2,7 @@ package bytebank;
 
 public class TestaContas {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsuficienteException {
 		ContaCorrente cc1 = new ContaCorrente(123, 978);
 		ContaPoupanca cp1 = new ContaPoupanca(741, 369);
 		cc1.deposita(100.0);

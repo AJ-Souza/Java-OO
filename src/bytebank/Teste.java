@@ -1,6 +1,6 @@
 package bytebank;
 public class Teste {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsuficienteException{
 		Conta contaDaMarcela = new ContaCorrente(456, 963369);
 		Conta contaDoPaulo = new ContaPoupanca(123, 789987);
 		
